@@ -33,7 +33,11 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     att_hash = {}
     
-    att_hash[:twitter] = doc.css("div.social-icon-container a")[0].attribute("href").value
+    if (doc.css("div.social-icon-container a")[0].attribute("href").value).present?)
+      att_hash[:twitter] = doc.css("div.social-icon-container a")[0].attribute("href").value
+    end
+    binding.pry
+
     att_hash[:linkedin] = doc.css("div.social-icon-container a")[1].attribute("href").value
     att_hash[:github] = doc.css("div.social-icon-container a")[2].attribute("href").value
     att_hash[:blog] = "https://#{profile_url.split('/').last}"
