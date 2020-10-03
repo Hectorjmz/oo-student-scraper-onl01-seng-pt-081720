@@ -63,7 +63,7 @@ class Scraper
     #doc.css("div.social-icon-container a")[2]    github
     #doc.css("div.social-icon-container a")[3]    joeburgues.com
     att_hash
-    binding.pry
+    #binding.pry
     
 
   end
