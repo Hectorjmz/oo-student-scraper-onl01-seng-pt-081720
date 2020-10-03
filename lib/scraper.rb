@@ -46,24 +46,41 @@ class Scraper
     end
 
     if !profile_url.empty?
-      att_hash[:blog] = "https://#{profile_url.split('/').last}"
+      att_hash[:blog] = "https://#{profile_url.split('/').last.}"
     end
 
     if !doc.css("div.profile-quote").text.empty?
       att_hash[:profile_quote] = doc.css("div.profile-quote").text
     end
 
-    if !doc.css("div.description-holder")[0].text.empty?
-      att_hash[:bio] = doc.css("div.description-holder")[0].text
+    if !doc.css("div.description-holder p")[0].text.empty?
+      att_hash[:bio] = doc.css("div.description-holder p")[0].text
     end
-    #binding.pry
+    #----------------------------------------------------------------------------------------------------
+     
+    # if !doc.css("div.description-holder")[0].text.empty?
+    #   att_hash[:bio] = doc.css("div.description-holder")[0].text
+    # end
 
-    #doc.css("div.social-icon-container a")[0]    twitter
-    #doc.css("div.social-icon-container a")[1]    linkedin
-    #doc.css("div.social-icon-container a")[2]    github
-    #doc.css("div.social-icon-container a")[3]    joeburgues.com
+    # if !doc.css("div.profile-quote").text.empty?
+    #   att_hash[:profile_quote] = doc.css("div.profile-quote").text
+    # end
+
+    # if !doc.css("div.social-icon-container a")[0].attribute("href").value.empty?
+    #   att_hash[:twitter] = doc.css("div.social-icon-container a")[0].attribute("href").value
+    # end
+    
+    # if !doc.css("div.social-icon-container a")[1].attribute("href").value.empty?
+    #   att_hash[:linkedin] = doc.css("div.social-icon-container a")[1].attribute("href").value
+    # end
+
+    # if !doc.css("div.social-icon-container a")[2].attribute("href").value.empty?
+    #   att_hash[:github] = doc.css("div.social-icon-container a")[2].attribute("href").value
+    # end
+
+
     att_hash
-    #binding.pry
+   
     
 
   end
