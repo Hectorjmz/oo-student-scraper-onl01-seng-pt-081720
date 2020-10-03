@@ -53,28 +53,6 @@ class Scraper
     if !doc.css("div.description-holder p")[0].text.empty?
       att_hash[:bio] = doc.css("div.description-holder p")[0].text
     end
-    #----------------------------------------------------------------------------------------------------
-     
-    # if !doc.css("div.description-holder")[0].text.empty?
-    #   att_hash[:bio] = doc.css("div.description-holder")[0].text
-    # end
-
-    # if !doc.css("div.profile-quote").text.empty?
-    #   att_hash[:profile_quote] = doc.css("div.profile-quote").text
-    # end
-
-    # if !doc.css("div.social-icon-container a")[0].attribute("href").value.empty?
-    #   att_hash[:twitter] = doc.css("div.social-icon-container a")[0].attribute("href").value
-    # end
-    
-    # if !doc.css("div.social-icon-container a")[1].attribute("href").value.empty?
-    #   att_hash[:linkedin] = doc.css("div.social-icon-container a")[1].attribute("href").value
-    # end
-
-    # if !doc.css("div.social-icon-container a")[2].attribute("href").value.empty?
-    #   att_hash[:github] = doc.css("div.social-icon-container a")[2].attribute("href").value
-    # end
-
 
     att_hash
    
